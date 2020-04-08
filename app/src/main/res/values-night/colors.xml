@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="color_primary">#0A70E0</color>
+    <color name="color_primary_dark">#0565CF</color>
+    <color name="color_accent">#036BDA</color>
+    <color name="nav_bar_scrim">@color/system_ui_scrim_black</color>
+
+
+    <color name="color_on_secondary">@color/color_black</color>
+
+    <color name="color_control_light">#2EFFFFFF</color> <!-- 18% white -->
+
+    <color name="default_text_color">#B3BBC3</color>
+
+
+    <!-- Scrim colors -->
+    <color name="system_ui_scrim_light">#2EFFFFFF</color> <!-- 18% white -->
+    <color name="system_ui_scrim_black">#17181B</color> <!-- 70% black -->
+
+    <!-- In dark mode without light status bar we can use transparent -->
+    <color name="status_bar_scrim">@color/transparent</color>
+
+
+</resources>

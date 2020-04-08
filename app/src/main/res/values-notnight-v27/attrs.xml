@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Theme">
+        <!-- Navigation bar divider color, used by NavigationBarContentFrameLayout -->
+
+        <attr name="colorControlLight" format="color" />
+
+    </declare-styleable>
+
+
+</resources>

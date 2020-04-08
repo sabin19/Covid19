@@ -1,0 +1,65 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.AppTheme" parent="Theme.MaterialComponents.DayNight">
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
+        <item name="colorSecondary">?attr/colorPrimary</item>
+        <item name="colorOnSecondary">@color/color_on_secondary</item>
+        <item name="colorControlLight">@color/color_control_light</item>
+        <item name="bottomNavigationStyle">@style/Widget.Covid.BottomNav</item>
+        <!-- Window decor -->
+        <item name="android:windowLightStatusBar" tools:targetApi="m">@bool/use_light_status</item>
+        <item name="android:statusBarColor">@color/transparent</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">
+            @bool/use_light_navigation
+        </item>
+        <item name="android:navigationBarColor">@color/nav_bar_scrim</item>
+
+        <item name="appBarLayoutStyle">@style/Widget.Covid.AppBar</item>
+
+        <!-- Widget style -->
+        <item name="android:textViewStyle">@style/Widget.Covid.TextView</item>
+
+
+    </style>
+
+    <style name="AppTheme" parent="Base.AppTheme">
+<!--        <item name="android:statusBarColor">@color/color_primary</item>-->
+        <item name="android:navigationBarColor">@color/nav_bar_scrim</item>
+    </style>
+
+
+    <style name="AppTheme.NoActionBar">
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Widget.Covid.TextView" parent="@android:style/TextAppearance.Material.Small">
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="fontFamily">@font/roboto</item>
+    </style>
+
+
+    <style name="TextAppearance.Covid.BottomNav" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="fontFamily">@font/roboto</item></style>
+
+    <style name="Widget.Covid.BottomNav" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="itemTextAppearanceActive">@style/TextAppearance.Covid.BottomNav</item>
+        <item name="itemTextAppearanceInactive">@style/TextAppearance.Covid.BottomNav</item>
+        <item name="labelVisibilityMode">labeled</item>
+    </style>
+
+    <style name="Widget.Covid.AppBar" parent="Widget.MaterialComponents.AppBarLayout.Surface">
+        <item name="android:background">?attr/colorSurface</item>
+        <item name="android:elevation">8dp</item>
+    </style>
+
+    <style name="TextAppearance.Covid.ToolbarTitle" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+
+</resources>

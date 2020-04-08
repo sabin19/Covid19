@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Covid19</string>
+    <string name="title_home">Home</string>
+    <string name="heading_home">Global Corona</string>
+    <string name="title_country">Countries</string>
+    <string name="title_information">Info</string>
+    <string name="text_active_cases">Active Cases</string>
+    <string name="text_deaths">Deaths:</string>
+    <string name="text_recovered">Recovered</string>
+    <string name="heading_country">Search by country</string>
+    <string name="text_cases">Cases</string>
+    <string name="text_new">New cases:</string>
+    <string name="text_active">Active:</string>
+    <string name="text_today">Today:</string>
+    <string name="text_recovered_label">Recovered:</string>
+    <string name="text_critical">Critical:</string>
+    <string name="text_new_deaths">New deaths:</string>
+    <string name="text_dummy" />
+    <string name="text_information">Prevention</string>
+    <string name="text_one_prevention">1. Wash your hands regularly for 20 seconds, with soap and water or alcohol-based hand rub</string>
+    <string name="text_two_prevention">2. Cover your nose and mouth with a disposable tissue or flexed elbow when you cough or sneeze</string>
+    <string name="text_three_prevention">3. Avoid close contact (1 meter or 3 feet) with people who are unwell</string>
+    <string name="text_four_prevention">"4. Stay home and self-isolate from others in the household if you feel unwell "</string>
+    <string name="text_fork_from">API from NOVELCovid/API</string>
+</resources>
