@@ -4,29 +4,26 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.sbn.covid19.databinding.FragmentHomeBinding
 import com.sbn.covid19.shared.result.EventObserver
-import com.sbn.covid19.shared.util.viewModelProvider
 import com.sbn.covid19.shared.util.Filter
-import dagger.android.support.DaggerFragment
-import javax.inject.Inject
+import dagger.hilt.android.AndroidEntryPoint
 
-class HomeFragment : DaggerFragment() {
+@AndroidEntryPoint
+class HomeFragment : Fragment() {
 
-    @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
-    private lateinit var viewModel: HomeViewModel
+    private val viewModel: HomeViewModel by viewModels()
     private lateinit var binding: FragmentHomeBinding
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
-        viewModel = viewModelProvider(viewModelFactory)
-        binding = FragmentHomeBinding.inflate(inflater,container,false).apply {
+        binding = FragmentHomeBinding.inflate(inflater, container, false).apply {
             viewModel = this@HomeFragment.viewModel
             lifecycleOwner = this@HomeFragment
         }

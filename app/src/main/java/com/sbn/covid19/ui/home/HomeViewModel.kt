@@ -1,20 +1,18 @@
 package com.sbn.covid19.ui.home
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.github.mikephil.charting.data.PieEntry
-import com.sbn.covid.model.GlobalCovid
 import com.sbn.covid19.shared.domain.covid.CovidUseCase
 import com.sbn.covid19.shared.result.Event
 import com.sbn.covid19.shared.result.Result
-import com.sbn.covid19.shared.util.postValueIfNew
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
-class HomeViewModel @Inject constructor(useCase: CovidUseCase) : ViewModel() {
+class HomeViewModel @ViewModelInject constructor(useCase: CovidUseCase) : ViewModel() {
 
     val cases = MutableLiveData<String>()
     val deaths = MutableLiveData<String>()

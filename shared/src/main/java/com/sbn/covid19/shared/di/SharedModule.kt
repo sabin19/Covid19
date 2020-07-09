@@ -2,16 +2,18 @@
 package com.sbn.covid19.shared.di
 
 
-import com.sbn.covid19.shared.data.NetworkSDataSource
-import com.sbn.covid19.shared.db.AppDatabase
 import com.sbn.covid19.shared.BuildConfig
+import com.sbn.covid19.shared.data.NetworkSDataSource
 import com.sbn.covid19.shared.data.covid.CovidByCountryRepository
 import com.sbn.covid19.shared.data.covid.CovidRepository
 import com.sbn.covid19.shared.data.covid.DefaultCovidByCountryRepository
 import com.sbn.covid19.shared.data.covid.DefaultCovidRepository
+import com.sbn.covid19.shared.db.AppDatabase
 import com.sbn.covid19.shared.util.NetworkUtils
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ApplicationComponent
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -21,6 +23,7 @@ import javax.inject.Singleton
 /**
  * Module where classes created in the shared module are created.
  */
+@InstallIn(ApplicationComponent::class)
 @Module
 class SharedModule {
 
