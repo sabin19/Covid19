@@ -6,11 +6,11 @@ buildscript {
         compileSdkVersion = 29
         minSdkVersion = 21
         targetSdkVersion = 29
-
         // App dependencies
+
         aiaVersion = '1.1.0'
         archCoreTestingVersion = '2.1.0'
-        androidGradlePluginVersion = '3.6.2'
+        androidGradlePluginVersion = '4.0.0'
         appcompatVersion = '1.1.0'
         browserVersion = '1.0.0-beta01'
         constraintLayoutVersion = '1.1.3'
