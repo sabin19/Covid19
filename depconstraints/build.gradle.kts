@@ -30,11 +30,9 @@ val material = "1.1.0"
 val mockito = "3.3.1"
 val mockitoKotlin = "1.5.0"
 val okhttp = "3.10.0"
-val okio = "1.14.0"
 val room = "2.2.5"
 val rules = "1.1.1"
 val runner = "1.2.0"
-val threetenabp = "1.0.5"
 val timber = "4.7.1"
 val viewpager2 = "1.0.0"
 val retrofit = "2.9.0"
@@ -79,11 +77,8 @@ dependencies {
         api("${Libs.ROOM_COMPILER}:$room")
         api("${Libs.OKHTTP}:$okhttp")
         api("${Libs.OKHTTP_LOGGING_INTERCEPTOR}:$okhttp")
-        api("${Libs.OKIO}:$okio")
         api("${Libs.RULES}:$rules")
         api("${Libs.RUNNER}:$runner")
-        api("${Libs.THREETENABP}:$threetenabp")
-        api("${Libs.THREETENBP}:${Versions.THREETENBP}")
         api("${Libs.TIMBER}:$timber")
         api("${Libs.VIEWPAGER2}:$viewpager2")
         api("${Libs.RETROFIT}:$retrofit")

@@ -14,8 +14,4 @@ object Versions {
     const val NAVIGATION = "2.2.2"
     const val HILT = "2.28-alpha"
 
-    // TODO: Remove this once the version for
-    //  "org.threeten:threetenbp:${Versions.threetenbp}:no-tzdb" using java-platform in the
-    //  depconstraints/build.gradle.kts.kts is defined
-    const val THREETENBP = "1.3.6"
 }

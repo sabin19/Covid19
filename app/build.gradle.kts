@@ -161,10 +161,6 @@ dependencies {
 
     implementation(Libs.MP_CHART)
 
-    // Date and time API for Java.
-    /*implementation(Libs.THREETENABP)
-    testImplementation(Libs.THREETENBP)*/
-
     // Kotlin
     implementation(Libs.KOTLIN_STDLIB)
 
