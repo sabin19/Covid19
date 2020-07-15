@@ -1,5 +1,6 @@
 package com.sbn.covid19.ui.countries
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -15,20 +16,22 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 @InternalCoroutinesApi
 @ExperimentalCoroutinesApi
-class CountryViewModel @Inject constructor(private val remoteUseCase: CountryUseCase, private val listUseCase: CovidCountryUseCase)  : ViewModel(),OnItemSelected {
+class CountryViewModel @ViewModelInject constructor(
+    private val remoteUseCase: CountryUseCase,
+    private val listUseCase: CovidCountryUseCase
+) : ViewModel(), OnItemSelected {
     val list = MutableLiveData<List<CovidCountry>>()
     private val _onItemSelected = MutableLiveData<Event<CovidCountry>>()
     val onItemSelected: LiveData<Event<CovidCountry>> get() = _onItemSelected
 
 
     @InternalCoroutinesApi
-    fun updateList(name: String?, filter: Filter = Filter.DEFAULT){
+    fun updateList(name: String?, filter: Filter = Filter.DEFAULT) {
         viewModelScope.launch {
-            val parameters = Pair(name,filter)
+            val parameters = Pair(name, filter)
             listUseCase(parameters).collect {
                 when(it){
                     is Result.Success -> list.postValue(it.data)

@@ -1,6 +1,6 @@
 
 
-package com.codeatech.grocery.shared.di
+package com.sbn.covid19.shared.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

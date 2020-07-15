@@ -1,4 +1,0 @@
-rootProject.name='Covid19'
-include ':app'
-include ':shared'
-include ':model'

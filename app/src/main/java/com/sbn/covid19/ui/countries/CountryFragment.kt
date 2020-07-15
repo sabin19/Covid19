@@ -7,31 +7,26 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.SearchView
-import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.sbn.covid19.R
 import com.sbn.covid19.databinding.FragmentCountryBinding
 import com.sbn.covid19.shared.result.EventObserver
-import com.sbn.covid19.shared.util.viewModelProvider
-import dagger.android.support.DaggerFragment
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_country.view.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.InternalCoroutinesApi
-import javax.inject.Inject
 
-class CountryFragment : DaggerFragment() {
+@AndroidEntryPoint
+class CountryFragment : Fragment() {
 
-    @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
     @ExperimentalCoroutinesApi
     @InternalCoroutinesApi
-    private lateinit var viewModel: CountryViewModel
+    private val viewModel: CountryViewModel by viewModels()
     private lateinit var binding: FragmentCountryBinding
+
     @ExperimentalCoroutinesApi
     @InternalCoroutinesApi
     private val adapter by lazy {
@@ -46,7 +41,6 @@ class CountryFragment : DaggerFragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        viewModel = viewModelProvider(viewModelFactory)
         binding = FragmentCountryBinding.inflate(inflater,container,false).apply {
             this.viewModel = this@CountryFragment.viewModel
             lifecycleOwner = this@CountryFragment
