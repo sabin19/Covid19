@@ -1,7 +1,9 @@
 package com.sbn.covid19.shared.data
 
 import androidx.annotation.WorkerThread
+import com.sbn.covid19.shared.result.AppException
 import com.sbn.covid19.shared.result.Result
+import com.sbn.covid19.shared.result.Status
 import com.sbn.covid19.shared.util.NetworkUtils
 import retrofit2.Response
 import java.lang.Exception
@@ -18,15 +20,15 @@ abstract class RemoteRepository constructor(private val networkUtils: NetworkUti
             if (response.isSuccessful) {
                 Result.Success(response.body()!!)
             } else {
-                Result.Error(Exception(response.message()))
+                Result.Error.NonRecoverableError(AppException(response.message()))
             }
 
         } catch (se3: SocketTimeoutException) {
-            Result.Error(Exception("Sever not responding"))
+            Result.Error.NonRecoverableError(AppException("Sever not responding",Status.TIME_OUT))
         } catch (e: Exception) {
-            Result.Error(e)
+            Result.Error.NonRecoverableError(AppException("Something went worng",Status.NON_TRACEABLE))
 
         }
-        else Result.Error(Exception("No Internet connectivity"))
+        else Result.Error.NonRecoverableError(AppException("No Internet connectivity", Status.NO_INTERNET))
     }
 }

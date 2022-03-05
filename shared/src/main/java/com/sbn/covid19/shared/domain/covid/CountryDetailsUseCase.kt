@@ -17,7 +17,6 @@ class CountryDetailsUseCase  @Inject constructor(
     private val repository: CovidByCountryRepository,
     @IoDispatcher ioDispatcher: CoroutineDispatcher
 ) : FlowUseCase<String, CovidCountry>(ioDispatcher) {
-    @ExperimentalCoroutinesApi
     override fun execute(parameters: String): Flow<Result<CovidCountry>> {
         return flow {
             emitAll(repository.covidCountryByName(parameters))

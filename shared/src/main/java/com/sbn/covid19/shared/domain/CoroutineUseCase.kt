@@ -1,6 +1,9 @@
 package com.sbn.covid19.shared.domain
 
+import android.util.Log
 import com.sbn.covid19.shared.result.Result
+import com.sbn.covid19.shared.result.Status
+import com.sbn.covid19.shared.result.AppException
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 
@@ -25,8 +28,17 @@ abstract class UseCase<in P, R>(private val coroutineDispatcher: CoroutineDispat
                     Result.Success(it)
                 }
             }
+        } catch (e: AppException) {
+            e.message?.let { Log.e(UseCase::class.simpleName, it) }
+            if (e.status == Status.NON_TRACEABLE){
+                Result.Error.NonRecoverableError(e)
+            }else{
+                Result.Error.RecoverableError(e)
+            }
+
         } catch (e: Exception) {
-            Result.Error(e)
+            e.message?.let { Log.e(UseCase::class.simpleName, it) }
+            Result.Error.NonRecoverableError(AppException("Constants.UNKNOWN_ERROR"))
         }
     }
 
@@ -34,5 +46,5 @@ abstract class UseCase<in P, R>(private val coroutineDispatcher: CoroutineDispat
      * Override this to set the code to be executed.
      */
     @Throws(RuntimeException::class)
-    protected abstract fun execute(parameters: P): R
+    protected abstract suspend fun execute(parameters: P): R
 }
